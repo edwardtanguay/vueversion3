@@ -12,15 +12,17 @@
 
 <body>
 	<div id="app">
+		TESTING
 		<div class="information">{{message}}</div>
 		<button @click="changeTheText">Change the Text</button>
 	</div>
 
 	<script>
 		const app = Vue.createApp({
-			el: "#app",
-			data: {
-				message: ''
+			data() {
+				return {
+					message: ''
+				}
 			},
 			methods: {
 				initialize: function () {
@@ -31,6 +33,7 @@
 				}
 			}
 		});
+		app.mount("#app");
 	</script>
 </body>
 

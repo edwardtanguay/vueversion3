@@ -2,7 +2,7 @@ const app = Vue.createApp({
 	data() {
 		return {
 			name: "Testing",
-			score: 34
+			score: 4
 		}
 	}
 })
