@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<head>
+	<script src="https://unpkg.com/vue@next"></script>
+	<title>test</title>
+	<style>
+		body {
+			padding: 20px;
+		}
+
+		.theImage {
+			display: block;
+			margin: 10px 0 0 0;
+		}
+
+		.bounce-enter-active {
+			animation: bounce-in 0.5s;
+		}
+
+		@keyframes bounce-in {
+			0% {
+				transform: scale(0);
+			}
+			50% {
+				transform: scale(1.25);
+			}
+			100% {
+				transform: scale(1);
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<div id="app">
+		<button @click="showTheImage()">Show Akbar</button>
+		<transition name="bounce">
+			<img v-show="showImage" class="theImage" src="akbar.jpg"/>
+		</transition>
+	</div>
+
+	<script>
+		const app = Vue.createApp({
+			data() {
+				return {
+					showImage: false 
+				}
+			},
+			methods: {
+				showTheImage() {
+					this.showImage = true;
+				}
+			}
+		})
+		const vm = app.mount('#app');
+	</script>
+</body>
+
+</html>
