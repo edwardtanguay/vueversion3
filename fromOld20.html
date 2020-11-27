@@ -14,6 +14,7 @@
 	<div id="app">
 		TESTING
 		<div class="information">{{message}}</div>
+		<div>{{fullMessage}}</div>
 		<button @click="changeTheText">Change the Text</button>
 	</div>
 
@@ -25,15 +26,22 @@
 				}
 			},
 			methods: {
-				initialize: function () {
+				initialize() {
 					this.message = 'test';
 				},
-				changeTheText: function () {
+				changeTheText() {
 					this.message = 'you clicked the button';
+				}
+			},
+			computed: {
+				fullMessage() {
+					return "test " + this.message;
 				}
 			}
 		});
 		app.mount("#app");
+		app.initialize();
+
 	</script>
 </body>
 

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<head>
+	<script src="https://unpkg.com/vue@next"></script>
+	<title>test</title>
+</head>
+<body>
+	<div id="app">
+		<div>{{message}}</div>
+	</div>
+
+	<script>
+		const app = Vue.createApp({
+			data() {
+				return {
+					message: 'initial value'
+				}
+			},
+			methods: {
+				initialize() {
+					this.message = 'changed value';
+				}
+			}
+		});
+		app.mount("#app");
+		app.initialize();
+	</script>
+</body>
+</html>
