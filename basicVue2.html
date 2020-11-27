@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+ 
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.4/vue.js"></script>
+    <title>test</title>
+    <style>
+        .information {
+            color: green;
+			margin: 10px; 
+        }
+    </style>
+</head>
+ 
+<body>
+    <div id="app">
+        <div class="information">{{message}}</div>
+        <button @click="changeTheText">Change the Text</button>
+    </div>
+ 
+    <script>
+        const app = new Vue({
+            el: "#app",
+            data: {
+                message: ''
+            },
+            methods: {
+                initialize: function () {
+                    this.message = 'original value';
+                },
+                changeTheText: function () {
+                    this.message = 'you clicked the button';
+                }
+            }
+        })
+        app.initialize();
+    </script>
+</body>
+ 
+</html>
+
+
+
+
