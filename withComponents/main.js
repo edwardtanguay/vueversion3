@@ -15,3 +15,16 @@ const app = Vue.createApp({
 })
 const vm = app.mount('#app');
 vm.initialize();
+
+app.component("product", {
+	template: `
+		<div class="product">This is the product.</div>	
+	`,
+	data() {
+		return {
+			
+		}
+	},
+	methods: {},
+	computed: {}
+})		

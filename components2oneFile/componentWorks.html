@@ -1,0 +1,54 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.4/vue.js"></script>
+        <title>Vue Basic</title>
+    </head>
+    <body>
+        <div id="app">
+            <div>[{{message}}]</div>
+            <div><flashcard-component front="fff" back="bbb"></flashcard-component></div>
+            <dp-notice message="Press the A key."></dp-notice>
+            <dp-notice message="Log out when finished."></dp-notice>
+            <dp-notice></dp-notice>
+        </div>
+        <script>
+     
+            const flashcardComponent = {
+                data: function() {
+                    return {
+                        front: 'house',
+                        back: 'Haus'
+                    }
+				},
+				props: ['front', 'back'],
+                template: '<div><div>{{front}} / {{back}}</div></div>'
+            };
+     
+            Vue.component('dp-notice', {
+                props: ['message'],
+                template: '<div>This is the notice: {{message || "(no message)"}}</div>'
+            });
+     
+            const app = new Vue({
+                el: '#app',
+                components: {
+                    'flashcard-component': flashcardComponent
+                },
+                data: {
+                    message: 'hello'
+                },
+                methods: {
+                    initialize() {
+                        setTimeout(() => {
+                            this.message = 'changed';
+                        }, 2000);
+                    }
+                }
+            });
+            app.initialize();
+        </script>
+    </body>
+    </html>
