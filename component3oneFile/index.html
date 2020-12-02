@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<head>
+	<title>test</title>
+</head>
+<script src="https://unpkg.com/vue@next"></script>
+
+<body>
+	<div id="app">
+		<div class="information">{{message}}</div>
+		<button @click="changeTheText">Change the Text</button>
+		<product></product>
+	</div>
+	<script>
+		const app = Vue.createApp({
+			data() {
+				return {
+					message: ''
+				}
+			},
+			methods: {
+				initialize() {
+					this.message = 'original value';
+				},
+				changeTheText() {
+					this.message = 'you clicked the button';
+				}
+			}
+		})
+		const vm = app.mount('#app');
+		vm.initialize();
+
+		app.component("product", {
+			template: `
+		<div class="product">This is the product.</div>	
+	`,
+			data() {
+				return {
+
+				}
+			},
+			methods: {},
+			computed: {}
+		})
+
+	</script>
+</body>
+
+</html>

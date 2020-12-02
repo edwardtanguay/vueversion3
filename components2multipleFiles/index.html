@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		  content="width=device-width, initial-scale=1.0">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.4/vue.js"></script>
+	<title>Vue Basic</title>
+</head>
+
+<body>
+	<div id="app">
+		<div>[{{message}}]</div>
+		<div>
+			<flashcard-component front="fff"
+								 back="bbb"></flashcard-component>
+		</div>
+		<dp-notice message="Press the A key."></dp-notice>
+		<dp-notice message="Log out when finished."></dp-notice>
+		<dp-notice></dp-notice>
+	</div>
+	<script src="components/Flashcard.js"></script>
+	<script src="components/DpNotice.js"></script>
+	<script src="main.js"></script>
+</body>
+
+</html>
